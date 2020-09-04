@@ -1,5 +1,5 @@
 #include <kfs/kernel.h>
-#include <kfs/mulitboot.h>
+#include <kfs/multiboot.h>
 #include <kfs/vga.h>
 #include <kfs/keyboard.h>
 

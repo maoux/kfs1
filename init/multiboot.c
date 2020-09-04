@@ -1,5 +1,5 @@
 #include <kfs/kernel.h>
-#include <kfs/mulitboot.h>
+#include <kfs/multiboot.h>
 
 extern void		print_grub_meminfo(t_grub_info *grub_info)
 {

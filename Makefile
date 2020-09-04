@@ -1,11 +1,22 @@
+include .conf.mk
+
 #files
 
 OBJS :=
-HEADERS :=
+HEADERS :=	$(INCDIR)/$(KERNELDIR)/io.h\
+			$(INCDIR)/$(KERNELDIR)/kernel.h\
+			$(INCDIR)/$(KERNELDIR)/keyboard.h\
+			$(INCDIR)/$(KERNELDIR)/multiboot.h\
+			$(INCDIR)/$(KERNELDIR)/ps2_controller.h\
+			$(INCDIR)/$(KERNELDIR)/system.h\
+			$(INCDIR)/$(KERNELDIR)/vga.h\
+			$(INCDIR)/ftlib.h\
+			$(INCDIR)/stddef.h\
+			$(INCDIR)/stdint.h\
+			$(INCDIR)/stdlib.h\
+			$(INCDIR)/string.h
 
 #includes
-
-include .conf.mk
 
 include $(LIBDIR)/libs.mk
 
