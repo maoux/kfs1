@@ -106,9 +106,6 @@ extern uint8_t		init_ps2_keyboard(void)
 	uint8_t		port1_status = 0x01;
 	uint8_t		port2_status = 0x01;
 
-
-	__asm__ volatile("cli;");
-
 	/* disable channel 1 ps2 controller */
 	send_command(0x64, 0xad, 0x00, 0, 0);
 	/* if exist, disable channel 2 */
