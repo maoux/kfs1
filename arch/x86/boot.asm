@@ -1,6 +1,6 @@
 ;declare constant for the multiboot header
-MBALIGN		equ 1 << 0
-MEMINFO		equ 1 << 1
+MBALIGN		equ 1 << 0 ;aligns modules on 4Kb pages boundaries
+MEMINFO		equ 1 << 1 ;if mem_* is present, include it
 FLAGS		equ MBALIGN | MEMINFO 
 MAGIC		equ 0x1BADB002
 CHECKSUM	equ -(MAGIC + FLAGS)
@@ -12,6 +12,7 @@ align 4
 	dd FLAGS
 	dd CHECKSUM
 
+;declare a stack into bss section
 section .bss
 align 16
 stack_bottom:
@@ -34,6 +35,8 @@ _start:
 	extern kmain
 	call kmain
 
+	;clear interupt flags, processor
+	;won't handle maskable interupts anymore
 	cli
 
 .hang:
